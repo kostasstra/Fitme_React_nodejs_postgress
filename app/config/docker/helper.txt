@@ -1,0 +1,5 @@
+# Run postgres stack  (create development db)
+docker-compose -f stack.yaml up
+
+# Exec in postgres container to execute psql
+docker exec -it $(docker ps | grep postgres | awk '{print $NF}') psql -h localhost -U postgres

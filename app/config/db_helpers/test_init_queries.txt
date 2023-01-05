@@ -1,0 +1,95 @@
+--REGIONS
+INSERT INTO regions (region_name) VALUES ('Attikh');
+INSERT INTO regions (region_name) VALUES ('Evrytania');
+--CITIES
+INSERT INTO cities (city_name, region_id) VALUES ('Athina',(select region_id from regions where region_name='Attikh'));
+INSERT INTO cities (city_name, region_id) VALUES ('Rafina',(select region_id from regions where region_name='Attikh'));
+INSERT INTO cities (city_name, region_id) VALUES ('Karpenhsi',(select region_id from regions where region_name='Evrytania'));
+INSERT INTO cities (city_name, region_id) VALUES ('Agrafa',(select region_id from regions where region_name='Evrytania'));
+--SECTORS
+INSERT INTO sectors (sector_name, city_id) VALUES ('Notia Proastia',(select city_id from cities where city_name='Athina'));
+INSERT INTO sectors (sector_name, city_id) VALUES ('Boreia Proasteia',(select city_id from cities where city_name='Athina'));
+INSERT INTO sectors (sector_name, city_id) VALUES ('Dytika Proasteia',(select city_id from cities where city_name='Athina'));
+INSERT INTO sectors (sector_name, city_id) VALUES ('Anatolika Proasteia',(select city_id from cities where city_name='Athina'));
+INSERT INTO sectors (sector_name, city_id) VALUES ('Rafina',(select city_id from cities where city_name='Rafina'));
+INSERT INTO sectors (sector_name, city_id) VALUES ('Karpenhsi',(select city_id from cities where city_name='Karpenhsi'));
+INSERT INTO sectors (sector_name, city_id) VALUES ('Agrafa',(select city_id from cities where city_name='Agrafa'));
+--AREAS
+INSERT INTO areas (area_name, sector_id) VALUES ('Argiroupoli',(select sector_id from sectors where sector_name='Notia Proastia'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Ilioupoli',(select sector_id from sectors where sector_name='Notia Proastia'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Elliniko',(select sector_id from sectors where sector_name='Notia Proastia'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Marousi',(select sector_id from sectors where sector_name='Boreia Proasteia'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Kifisia',(select sector_id from sectors where sector_name='Boreia Proasteia'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Anoixi',(select sector_id from sectors where sector_name='Boreia Proasteia'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Aigaleo',(select sector_id from sectors where sector_name='Dytika Proasteia'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Ilion',(select sector_id from sectors where sector_name='Dytika Proasteia'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Agia Varvara',(select sector_id from sectors where sector_name='Dytika Proasteia'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Spata',(select sector_id from sectors where sector_name='Anatolika Proasteia'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Karpenhsi',(select sector_id from sectors where sector_name='Karpenhsi'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Agrafa',(select sector_id from sectors where sector_name='Agrafa'));
+INSERT INTO areas (area_name, sector_id) VALUES ('Rafina',(select sector_id from sectors where sector_name='Rafina'));
+--SPORTS
+INSERT INTO sports (sport_name) VALUES ('Basketball');
+INSERT INTO sports (sport_name) VALUES ('Football');
+INSERT INTO sports (sport_name) VALUES ('Tennis');
+--SPORTS_CENTERS
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (1,'AONA','Olympias 70','a@a','695',16451,'698','myurl');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (2,'HONA','Androutsou 26','a@a','695',16341,'697','myurl2');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (1,'GSA','Olympias 370','a@a','695',16451,'698','myurl3');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (4,'MarONA','Mar 70','a@a','695',12345,'693','myurl2');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (3,'EllinONA','Ellin 70','a@a','695',12346,'693','url');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (5,'KifONA','Kif 70','a@a','695',12347,'693','myurl');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (6,'AnoixONA','Anoix 70','a@a','695',12348,'693','myurl2');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (7,'AigalONA','Aig 70','a@a','695',12349,'693','myurl');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (8,'IliONA','Ilion 70','a@a','695',12310,'693','myurl3');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (9,'VarvarONA','AgVar 70','a@a','695',12116,'693','myurl');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (10,'SpatONA','Spat 70','a@a','695',12336,'693','url');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (11,'KarpenisONA','Karp 70','a@a','695',55346,'693','uurl');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (12,'AgrafONA1','Ag 10','a@a','695',12396,'693','myurl3');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (12,'AgrafONA2','Ag 11','a@a','695',12246,'693','myurl');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (13,'RafinONA1','Raf 71','a@a','695',12148,'693','myurl4');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (13,'RafinONA2','Raf 72','a@a','695',12301,'693','myurl3');
+INSERT INTO sport_centers (area_id, sport_center_name, address, email, mobile_number, postal_code, phone_number, url) VALUES (13,'RafinONA3','Raf 73','a@a','695',10006,'693','myurl2');
+--ARENAS
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,1,'{"random1":"value1","random2":"value2"}','BASKET1');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,2,'{"random1":"value2","random2":"value2"}','BASKET1');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,3,'{"random1":"value1","random2":"value3"}','BASKET1');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,6,'{"random3":"value3","random2":"value2"}','BASKET1');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (2,6,'{"random2":"value4","random4":"value2"}','FOOTBALL1');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (2,3,'{"random1":"value2","random2":"value2"}','FOOTBALL9');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,4,'{"random4":"value1","random2":"value4"}','BASKET1');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,4,'{"random1":"value1","random3":"value2"}','BASKET2');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,4,'{"random1":"value1"}','BASKET3');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,4,'{"random4":"value3"}','BASKET4');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,4,'{}','BASKET5');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,4,'{"random1":"value1","random2":"value5"}','BASKET6');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,4,'{"random1":"value1","random2":"value2"}','BASKET7');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,8,'{"random1":"value1","random2":"value8"}','BASKET8');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,7,'{"random1":"value1"}','BASKET9');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,4,'{"random1":"value1","random2":"value1"}','BASKET10');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,5,'{"random1":"value1","random2":"value2"}','BASKET11');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,4,'{"random2":"value2"}','BASKET12');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,4,'{"random1":"value1","random2":"value2"}','BASKET12');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,9,'{"random1":"value1","random2":"value2"}','BASKET13');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (1,10,'{"random1":"value1","random2":"value2"}','BASKET14');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (2,4,'{"random2":"value2"}','FOOTBALL1');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (2,11,'{"random1":"value1"}','FOOTBALL2');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (2,12,'{"random5":"value3"}','FOOTBALL3');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (2,13,'{}','FOOTBALL4');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (2,14,'{"random1":"value1","random4":"value2"}','FOOTBALL5');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (2,15,'{"random2":"value2","random2":"value2"}','FOOTBALL6');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (2,16,'{"random1":"value1","random2":"value2"}','FOOTBALL7');
+INSERT INTO arenas (sport_id, sport_center_id, arena_details, arena_name) VALUES (2,17,'{"random4":"value4","random2":"value4"}','FOOTBALL8');
+--ROLES
+INSERT INTO roles (role_id, role_name) VALUES (1,'admin');
+INSERT INTO roles (role_id, role_name) VALUES (2,'user');
+--ARENA_DETAILS 
+INSERT INTO arena_details (detail_name, detail_type, detail_value_type, sport_id) VALUES ('random1','singleselect','boolean',1);
+INSERT INTO arena_details (detail_name, detail_type, detail_value_type, sport_id) VALUES ('random2','multiselect','string',1);
+INSERT INTO arena_details (detail_name, detail_type, detail_value_type, sport_id) VALUES ('random3','singleselect','string',1);
+INSERT INTO arena_details (detail_name, detail_type, detail_value_type, sport_id) VALUES ('random4','multiselect','boolean',1);
+INSERT INTO arena_details (detail_name, detail_type, detail_value_type, sport_id) VALUES ('random1','singleselect','boolean',2);
+INSERT INTO arena_details (detail_name, detail_type, detail_value_type, sport_id) VALUES ('random2','multiselect','string',2);
+INSERT INTO arena_details (detail_name, detail_type, detail_value_type, sport_id) VALUES ('random4','singleselect','string',2);
+INSERT INTO arena_details (detail_name, detail_type, detail_value_type, sport_id) VALUES ('random5','multiselect','boolean',2);
+

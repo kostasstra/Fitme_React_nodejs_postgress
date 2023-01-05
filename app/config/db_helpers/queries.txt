@@ -1,0 +1,31 @@
+SELECT 
+	a.arena_name,
+	sc.sport_center_name,
+	sc.address,
+	sc.postal_code,
+	sc.phone_number
+FROM 
+	arenas AS a
+INNER JOIN
+	sport_centers AS sc
+ON
+	sc.sport_center_id = a.sport_center_id
+WHERE 
+	sc.area_id = (
+		SELECT 
+			area_id 
+		FROM 
+			areas 
+		WHERE 
+			area_name = 'Karpenhsi'
+	)
+AND 
+	sport_id = (
+		SELECT 
+			sport_id 
+		FROM 
+			sports 
+		WHERE 
+			sport_name = 'Football'
+		)
+;
